@@ -687,6 +687,7 @@ export default function PoseCamera({ poseLandmarker }) {
   const handleCloseSummary = async () => {
     // ... (function unchanged)
     if (!sessionSummary) return;
+
     setIsSaving(true);
     setSessionSummary(null);
     setStatusMessage("Saving recording...");
