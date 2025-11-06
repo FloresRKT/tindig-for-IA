@@ -684,7 +684,7 @@ export default function PoseCamera({ poseLandmarker }) {
     recordingSamplesRef.current = [];
   };
 
-  const handleSaveSession = async () => {
+  const handleCloseSummary = async () => {
     // ... (function unchanged)
     if (!sessionSummary) return;
     setIsSaving(true);
@@ -723,12 +723,6 @@ export default function PoseCamera({ poseLandmarker }) {
         setStatusMessage(baseline ? "Ready" : "Please Calibrate Posture");
       }, 1200);
     }
-  };
-
-  const handleCloseSummary = () => {
-    // ... (function unchanged)
-    setSessionSummary(null);
-    setStatusMessage(baseline ? "Ready" : "Please Calibrate Posture");
   };
 
   const goBack = () => {
@@ -1128,7 +1122,6 @@ export default function PoseCamera({ poseLandmarker }) {
       <SessionSummaryModal
         summary={sessionSummary}
         onClose={handleCloseSummary}
-        onSave={handleSaveSession}
       />
     </div>
   );
